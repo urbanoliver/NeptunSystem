@@ -1,0 +1,94 @@
+<app-navigation></app-navigation>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="new-column1">
+                <h2 class="dark-blue-text">Új Oktató</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form [formGroup]="oktatoForm">
+                            <div class="mb-3">
+                                <label for="nev" class="form-label">Név</label>
+                                <input type="text" class="form-control" id="nev" formControlName="nev">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tanszek" class="form-label">Tanszék</label>
+                                <input type="text" class="form-control" id="tanszek" formControlName="tanszek">
+                            </div>
+                        </form>
+                        <div class="text-end">
+                            <button class="btn btn-outline-primary" (click)="saveOktato()"
+                                [disabled]="!oktatoForm.valid">Mentés</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="dark-blue-text">Új Hallgató</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form [formGroup]="hallgatoForm">
+                            <div class="mb-3">
+                                <label for="nev" class="form-label">Név</label>
+                                <input type="text" class="form-control" id="nev" formControlName="nev">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tankor" class="form-label">Tankör</label>
+                                <input type="text" class="form-control" id="tankor" formControlName="tankor">
+                            </div>
+                        </form>
+                        <div class="text-end">
+                            <button class="btn btn-outline-primary" (click)="saveHallgato()"
+                                [disabled]="!oktatoForm.valid">Mentés</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="new-column2">
+                <h2 class="dark-blue-text">Új Tantárgy</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form [formGroup]="tantargyForm">
+                            <div class="mb-3">
+                                <label for="nev" class="form-label">Név</label>
+                                <input type="text" class="form-control" id="nev" formControlName="nev">
+                            </div>
+                            <div class="mb-3">
+                                <label for="oktatoId" class="form-label">Oktató ID</label>
+                                <input type="text" class="form-control" id="oktatoId" formControlName="oktatoId">
+                            </div>
+                        </form>
+                        <div class="text-end">
+                            <button class="btn btn-outline-primary" (click)="saveTantargy()"
+                                [disabled]="!oktatoForm.valid">Mentés</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="dark-blue-text">Új Kurzus</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form [formGroup]="kurzusForm">
+                            <div class="mb-3">
+                                <label for="idopont" class="form-label">Időpont</label>
+                                <input type="text" class="form-control" id="idopont" formControlName="idopont">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tantargyId" class="form-label">Tantárgy ID</label>
+                                <input type="text" class="form-control" id="tantargyId" formControlName="tantargyId">
+                            </div>
+                        </form>
+                        <div class="text-end">
+                            <button class="btn btn-outline-primary" (click)="saveKurzus()"
+                                [disabled]="!oktatoForm.valid">Mentés</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

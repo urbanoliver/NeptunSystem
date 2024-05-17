@@ -1,0 +1,33 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h2 class="felirat1">Tantágyak</h2>
+    <div class="row-auto">
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Tárgy ID</th>
+                        <th scope="col">Tárgy neve</th>
+                        <th scope="col">Tárgyjegyző ID</th>
+                        <th scope="col">Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(tantargy of tantargyak; track $index) {
+                    <tr>
+                        <td>{{ tantargy.id }}</td>
+                        <td>{{ tantargy.nev }}</td>
+                        <td>{{ tantargy.oktatoId }}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteTantargy(tantargy)">
+                                Tárgy törlése
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

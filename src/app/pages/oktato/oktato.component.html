@@ -1,0 +1,69 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="felirat1">Oktatók</h2>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Név</th>
+                            <th>Tanszék</th>
+                            <th>Művelet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(oktato of oktatok; track $index) {
+                        <tr>
+                            <td class="col-md-1">{{ oktato.id }}</td>
+                            <td class="col-md-2">{{ oktato.nev }}</td>
+                            <td class="col-md-4">{{ oktato.tanszek }}</td>
+                            <td class="col-md-2">
+                                <button class="btn btn-outline-danger ms-2" (click)="deleteOktato(oktato)">
+                                    Oktató törlése
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="felirat2">
+                <h3>Oktatott Tárgyak</h3>
+                <div class="row">
+                    <p>Megadott oktató tárgyainak listázása</p>
+                    <div class="col-12" style="margin-right: 15px;">
+                        <input #filterInput [value]="filterText()" (input)="filterText.set(filterInput.value)"
+                            type="text" class="form-control" placeholder="Oktató NEPTUN kódja">
+                    </div>
+                </div>
+            </div>
+            <div class="table2" style="margin-left: 7em;">
+                <div class="row">
+                    <div style="width: auto">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tárgy neve</th>
+                                    <!--<th>oktato_id</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for(tantargyak of list$ | async | search: filterText(); track $index) {
+                                <tr>
+                                    <td>{{ tantargyak.nev }}</td>
+                                    <!-- <td class="col-md-2" >{{ tantargyak.oktatoId }}</td>-->
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

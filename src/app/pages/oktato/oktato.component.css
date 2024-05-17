@@ -1,0 +1,55 @@
+
+  .container {
+    margin-top: 10px;
+    margin-left: 1rem;
+    overflow-x: auto;
+  }
+
+  .container {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+  .felirat2 {
+    text-align: center;
+  }
+  .table2 {
+    margin-top: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+
+.felirat1,
+.felirat2 {
+    color: #0056b3;
+    font-size: 24px;
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #0056b3;
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+  

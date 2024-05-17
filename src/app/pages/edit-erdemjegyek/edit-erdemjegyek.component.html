@@ -1,0 +1,33 @@
+<app-navigation></app-navigation>
+
+<div class="container-fluid mt-5">
+    <h2 class="title">Érdemjegy Módositása</h2>
+    <div class="row">
+        
+        <div class="col-md-6">
+            <form [formGroup]="erdemjegyForm">
+                <div class="mb-3">
+                    <label for="hallgatoId" class="form-label">Hallgato ID</label>
+                    <input type="text" class="form-control" id="hallgatoId" formControlName="hallgatoId">
+                </div>
+                <div class="mb-3">
+                    <label for="erdemjegy" class="form-label">Érdemjegy</label>
+                    <input type="text" class="form-control" id="erdemjegy" formControlName="erdemjegy">
+                </div>
+                <div class="mb-3">
+                    <label for="tantargyId" class="form-label"> Tantárgy ID</label>
+                    <input type="text" class="form-control" id="tantargyId" formControlName="tantargyId">
+                </div>
+                <div class="mb-3">
+                    <label for="kurzusId" class="form-label">Kurzus ID</label>
+                    <input type="text" class="form-control" id="kurzusId" formControlName="kurzusId">
+                </div>
+                <div class="text-end">
+                    <button class="btn btn-outline-primary" (click)="saveErdemjegy()">Mentés</button>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+</div>

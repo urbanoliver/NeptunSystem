@@ -1,0 +1,36 @@
+<app-navigation></app-navigation>
+
+<div class="container mt-5">
+    <h1 class="text-center">Átlagkalkulátor</h1>
+
+    <div class="row mt-5">
+        <div class="col-md-5">
+            <div class="input-group">
+                <input type="text" [(ngModel)]="tankor" class="form-control" placeholder="Tankör kódja">
+                <button class="btn btn-primary" (click)="tankorAtlag(tankor)">Számít</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="atlag1">Tankör átlaga:</label>
+            <div class="output-container">
+                <output id="atlag1"> {{ averageTK }} </output>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-5">
+            <div class="input-group">
+                <input type="number" [(ngModel)]="hallgatoId" class="form-control" placeholder="Hallgató ID-ja">
+                <button class="btn btn-primary" (click)="hallgatoAtlag(hallgatoId)">Számít</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="atlag2">Hallgató átlaga:</label>
+            <div class="output-container">
+                <output id="atlag2">{{ average }}</output>
+            </div>
+        </div>
+    </div>
+    
+</div>

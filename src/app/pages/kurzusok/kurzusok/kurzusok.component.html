@@ -1,0 +1,33 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h2 class="felirat1">Kurzusok</h2>
+    <div class="row-auto">
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Kurzus ID</th>
+                        <th scope="col">Időpont</th>
+                        <th scope="col">Tantárgy ID</th>
+                        <th scope="col">Művelet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(kurzus of kurzusok; track $index) {
+                    <tr>
+                        <td>{{ kurzus.id }}</td>
+                        <td>{{ kurzus.idopont }}</td>
+                        <td>{{ kurzus.tantargyId }}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteKurzus(kurzus)">
+                                Kurzus törlése
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

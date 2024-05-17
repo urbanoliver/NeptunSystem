@@ -1,0 +1,51 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h2 class="felirat1">Hallgatók Érdemjegyei</h2>
+    <div class="row">
+        <p>Megadott Hallgató érdemjegyeinek listázása</p>
+        <div class="col-3 ml-3">
+            <input #filterInput [value]="filterText()" (input)="filterText.set(filterInput.value)"
+                   type="text" class="form-control" placeholder="Hallgató NEPTUN kódja">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Hallgató ID</th>
+                            <th scope="col">Tantárgy ID</th>
+                            <th scope="col">Érdemjegy</th>
+                            <th scope="col">Művelet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(erdemjegy of list$ | async | search: filterText(); track $index) {
+                        <tr>
+                            <td>{{ erdemjegy.hallgatoId }}</td>
+                            <td>{{ erdemjegy.tantargyId }}</td>
+                            <td>{{ erdemjegy.erdemjegy }}</td>
+                            <td>
+                                <button class="btn btn-outline-primary ms-2"
+                                        (click)="goToEditErdemjegy(erdemjegy.id)">
+                                    Érdemjegy módosítása
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
